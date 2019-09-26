@@ -7,11 +7,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class CustomUserDetails extends User implements UserDetails {
+public class MioUserDetails extends Utente implements UserDetails {
 
 	private static final long serialVersionUID = 7866379876043860000L;
 
-	public CustomUserDetails(final User user) {
+	public MioUserDetails(final Utente user) {
         super(user);
     }
 

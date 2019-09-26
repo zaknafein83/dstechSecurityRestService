@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "role")
-public class Role {
+public class Ruoli {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +19,7 @@ public class Role {
     @Column(name = "role")
     private String role;
 
-    public Role() {
+    public Ruoli() {
     }
 
     public int getRoleId() {

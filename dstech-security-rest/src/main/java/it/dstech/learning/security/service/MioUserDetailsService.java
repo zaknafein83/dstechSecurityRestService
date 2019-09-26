@@ -8,24 +8,24 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import it.dstech.learning.security.model.CustomUserDetails;
-import it.dstech.learning.security.model.User;
-import it.dstech.learning.security.repository.UserRepository;
+import it.dstech.learning.security.model.MioUserDetails;
+import it.dstech.learning.security.model.Utente;
+import it.dstech.learning.security.repository.UtenteRepository;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+public class MioUserDetailsService implements UserDetailsService{
 
 	
 	@Autowired
-	private UserRepository usersRepository;
+	private UtenteRepository usersRepository;
 	
 	
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> optionalUsers = usersRepository.findByName(username);
+        Optional<Utente> optionalUsers = usersRepository.findByName(username);
         optionalUsers
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found"));
         return optionalUsers
-                .map(CustomUserDetails::new).get();
+                .map(MioUserDetails::new).get();
     }
 }

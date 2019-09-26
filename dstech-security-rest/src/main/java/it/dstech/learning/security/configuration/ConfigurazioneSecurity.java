@@ -10,17 +10,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import it.dstech.learning.security.repository.UserRepository;
-import it.dstech.learning.security.service.CustomUserDetailsService;
+import it.dstech.learning.security.repository.UtenteRepository;
+import it.dstech.learning.security.service.MioUserDetailsService;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
-@EnableJpaRepositories(basePackageClasses = UserRepository.class)
+@EnableJpaRepositories(basePackageClasses = UtenteRepository.class)
 @Configuration
 public class ConfigurazioneSecurity extends WebSecurityConfigurerAdapter{
 	
     @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private MioUserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
