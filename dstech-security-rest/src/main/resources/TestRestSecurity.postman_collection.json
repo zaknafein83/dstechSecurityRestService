@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "b62257ae-a1c1-4018-85d5-0d3493ee885b",
+		"name": "TestRestSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/rest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "root",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/rest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/rest/secured",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/rest/secured",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"secured"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "JUnitTestName",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ciccio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
