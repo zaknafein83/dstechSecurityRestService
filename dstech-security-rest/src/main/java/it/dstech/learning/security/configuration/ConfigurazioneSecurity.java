@@ -35,7 +35,7 @@ public class ConfigurazioneSecurity extends WebSecurityConfigurerAdapter{
 
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("**/secured").authenticated()
+                .antMatchers("**/sicuro").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin().permitAll();
